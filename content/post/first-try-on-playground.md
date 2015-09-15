@@ -2,7 +2,7 @@
 date = "2015-08-28T16:40:08+09:00"
 draft = false
 title = "まずは触ってみよう"
-author = "hy3"
+author = "hondata"
 categories = ["序章"]
 +++
 
