@@ -1,8 +1,9 @@
 +++
 date = "2015-08-28T16:40:08+09:00"
-draft = true
+draft = false
 title = "まずは触ってみよう"
 author = "hy3"
+categories = ["序章"]
 +++
 
 # Go Playgroundを使おう
@@ -10,7 +11,7 @@ author = "hy3"
 このサイトを開いたあなたは、既にGo言語について少なからず興味を持っているかと思います。できるならば、早く試してみたいですよね。
 そのような方がすぐにGo言語を試せる環境として、[Go Playground](http://play.golang.org/)というサイトがあります。
 
-[Go Playground](http://play.golang.org/)を開いたら、とりあえず以下のコードをコピー＆ペーストして「Run」ボタンを押してみましょう。
+[Go Playground](http://play.golang.org/)を開いたら、以下のコードをコピー＆ペーストして「Run」ボタンを押してみましょう。
 
 ```go
 package main
