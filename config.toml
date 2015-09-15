@@ -1,5 +1,3 @@
 baseurl = "http://cuto.unirita.co.jp/"
 languageCode = "ja-jp"
 title = "はじめてのGo言語"
-pygmentscodefences = true
-pygmentsstyle = "manni"
