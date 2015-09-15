@@ -1,6 +1,6 @@
 +++
 date = "2015-09-15T15:17:21+09:00"
-draft = true
+draft = false
 title = "ビルド・実行する"
 author = "hy3"
 categories = ["序章"]
