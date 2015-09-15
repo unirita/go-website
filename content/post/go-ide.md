@@ -1,6 +1,6 @@
 +++
 date = "2015-09-15T16:28:22+09:00"
-draft = true
+draft = false
 title = "IDEについて"
 author = "hondata"
 categories = ["序章"]
