@@ -26,6 +26,20 @@ img {
   max-width: 100%;
 }
 
+table {
+  font-size: 1rem;
+  border: 1px solid black;
+  border-spacing: 0;
+}
+
+th, tr, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 5px;
+}
+
 .site-wrap {
   min-height: 100%;
   margin-bottom: -120px;
