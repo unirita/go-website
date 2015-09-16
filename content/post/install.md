@@ -2,7 +2,7 @@
 date = "2015-09-15T16:40:18+09:00"
 draft = true
 title = "Goをインストールする"
-author = "hy3"
+author = "shanxia"
 categories = ["序章"]
 +++
 
@@ -29,5 +29,3 @@ Macで導入する場合は、homebrewを利用するのが簡単です。
 > brew install go
 
 これだけで、導入は完了です。
-
-
