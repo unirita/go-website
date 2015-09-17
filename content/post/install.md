@@ -1,6 +1,6 @@
 +++
 date = "2015-09-15T16:40:18+09:00"
-draft = true
+draft = false
 title = "Goをインストールする"
 author = "hy3"
 categories = ["序章"]
