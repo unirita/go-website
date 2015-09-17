@@ -1,6 +1,6 @@
 +++
 date = "2015-09-16T16:12:34+09:00"
-draft = true
+draft = false
 title = "キーワード"
 author = "hondata"
 categories = ["Go言語の基本"]
