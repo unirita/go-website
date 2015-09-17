@@ -14,7 +14,7 @@
 */
 
 body {
-  font-family: "Ubuntu", "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: "Ubuntu", 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
 html, body {
@@ -24,6 +24,20 @@ html, body {
 img {
   width: auto;
   max-width: 100%;
+}
+
+table {
+  font-size: 1rem;
+  border: 1px solid black;
+  border-spacing: 0;
+}
+
+th, tr, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 5px;
 }
 
 .site-wrap {
@@ -263,7 +277,7 @@ h6,
   font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 900;
   line-height: 1.2;
-  margin: 0.414em 0 0.5em;
+  margin: 1em 0 0.5em;
 }
 
 .social-icons {
