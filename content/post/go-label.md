@@ -1,9 +1,9 @@
 +++
 date = "2015-09-17T13:08:32+09:00"
 draft = false
-title = "Goのlabel"
+title = "Goのラベル"
 author = "shanxia"
-categories = ["序章"]
+categories = ["Go言語の基本"]
 +++
 
 # Goのラベルについて

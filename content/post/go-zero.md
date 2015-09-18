@@ -3,7 +3,7 @@ date = "2015-09-17T13:42:23+09:00"
 draft = false
 title = "Goのゼロ値"
 author = "shanxia"
-categories = ["序章"]
+categories = ["Go言語の基本"]
 +++
 
 #Goのゼロ値
