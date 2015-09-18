@@ -1,6 +1,6 @@
 +++
 date = "2015-09-18T15:18:39+09:00"
-draft = true
+draft = false
 title = "条件分岐"
 author = "hondata"
 categories = ["Go言語の基本"]
