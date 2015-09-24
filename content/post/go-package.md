@@ -1,6 +1,6 @@
 +++
 date = "2015-09-24T11:17:02+09:00"
-draft = true
+draft = false
 title = "パッケージ"
 author = "hondata"
 categories = ["中級者向け"]
