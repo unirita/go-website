@@ -229,7 +229,7 @@ abbr {
 }
 
 pre, code {
-  font-family: Menlo, Monaco, "Courier New", monospace
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
 }
 
 code {
@@ -237,6 +237,9 @@ code {
 }
 
 pre {
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
   padding: 1.125em;
   font-size: 1rem;
   line-height: 1.11;
