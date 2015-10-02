@@ -17,9 +17,9 @@ GOPATH直下には、3つのディレクトリを配置します。
 
 <pre>
 $GOPATH/
-┣ bin/
-┣ pkg/
-┗ src/
+┣bin/
+┣pkg/
+┗src/
 </pre>
 
 <dl>

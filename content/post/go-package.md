@@ -213,7 +213,7 @@ func SomeFunc2() {
 <pre>
 （GOPATH）/
 ┗src/
-　┣test/
+　┗test/
 　　┣test.go（パッケージ名：test）
 　　┗test2.go（パッケージ名：test2）
 </pre>
@@ -227,7 +227,7 @@ func SomeFunc2() {
 <pre>
 （GOPATH）/
 ┗src/
-　┣somepkg/
+　┗somepkg/
 　　┣some.go（パッケージ名：somepkg）
 　　┗some_test.go（パッケージ名：somepkg_test）
 </pre>
