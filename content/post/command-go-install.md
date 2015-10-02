@@ -1,6 +1,6 @@
 +++
 date = "2015-10-02T14:20:38+09:00"
-draft = true
+draft = false
 title = "go installコマンドについて"
 author = "hondata"
 categories = ["中級者向け"]

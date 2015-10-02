@@ -1,6 +1,6 @@
 +++
 date = "2015-10-02T11:45:06+09:00"
-draft = true
+draft = false
 title = "GOPATHについて"
 author = "hondata"
 categories = ["中級者向け"]
