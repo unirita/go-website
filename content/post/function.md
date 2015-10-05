@@ -1,6 +1,6 @@
 +++
 date = "2015-10-05T15:53:30+09:00"
-draft = true
+draft = false
 title = "関数・メソッド"
 author = "hondata"
 categories = ["中級者向け"]
