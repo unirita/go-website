@@ -1,6 +1,6 @@
 +++
 date = "2015-10-05T16:06:22+09:00"
-draft = true
+draft = false
 title = "スライス1"
 author = "shanxia"
 categories = ["中級者向け"]
@@ -32,7 +32,7 @@ import (
 func main() {
 	// スライスの元となる配列を作成
 	num := [5]int{1, 2, 3, 4, 5}
-	// スライス型変数
+	// スライス型変数の宣言
 	var slice1 []int
 
 	// 配列全体
@@ -102,7 +102,7 @@ func main() {
 	// スライスの元となる配列を作成
 	num := [5]int{1, 2, 3, 4, 5}
 
-	// 配列全体
+	// 配列の一部をスライス
 	slice1 := num[1:4]
 	fmt.Println(slice1)
 	fmt.Println("len=", len(slice1))
