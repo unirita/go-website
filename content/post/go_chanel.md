@@ -132,3 +132,56 @@ func main() {
 
 main関数側は、ゴルーチンが送信操作するまで、受信操作で待機しています。
 
+## ゴルーチン間のデータ共有
+ゴルーチン間でデータを共有する場合、グローバル変数を使用することもできますが、チャネルを使用することによって、同時アクセスを防ぐことが簡単に実現できます。
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+// 全ゴルーチン数
+const goroutines = 5
+
+func main() {
+	// 共有データを保持するチャネル
+	counter := make(chan int)
+	// 全ゴルーチン終了通知用のチャネル
+	end := make(chan bool)
+
+	// 5個のゴルーチンを実行する
+	for i := 0; i < goroutines; i++ {
+		// 共有データ(counter)を受信し、インクリメントする
+		go func(counter chan int) {
+			// チャネルから共有データの受信
+			val := <-counter
+			// +1する
+			val++
+			fmt.Println("counter = ", val)
+
+			if val == goroutines {
+				// 最後のゴルーチンの場合は、終了通知用のチャネルへ送信
+				end <- true
+			}
+			// +1したデータを、他のゴルーチンへ送信
+			counter <- val
+		}(counter)
+	}
+	// 初期値をチャネルに送信
+	counter <- 0
+	// 全ゴルーチンの終了を待機
+	<-end
+	fmt.Println("終了")
+}
+```
+実行結果は、次の通りです。
+>counter =  1
+counter =  2
+counter =  3
+counter =  4
+counter =  5
+終了
+
+main関数からcounterへデータ送信後、各ゴルーチンで順にデータを処理しています。
