@@ -1,6 +1,6 @@
 +++
 date = "2015-10-08T15:05:05+09:00"
-draft = true
+draft = false
 title = "テストカバレッジの測定"
 author = "hondata"
 categories = ["Goのテスト"]
