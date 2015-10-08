@@ -55,4 +55,6 @@ total:                  (statements)    62.5%
 $ go tool cover -html=cover.out
 </pre>
 
+上記のコマンドを発行すると自動的に標準のブラウザが起動し、カバレッジ情報が表示されます。
+
 ![ブラウザ上でのカバレッジ表示](/images/coverage_html.png)
