@@ -49,7 +49,7 @@ func main() {
 
 これを実行すると、次の様に表示されます。
 
-<pre>
+<pre class="output">
 bool =     false
 int =      0
 rune =     0

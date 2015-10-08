@@ -40,9 +40,10 @@ func main() {
 
 これを実行すると、以下の様に表示されます。
 
->defer start.
+<pre class="output">
+defer start.
 defer end.
 defer start.
 recovery!
 defer end.
-
+</pre>

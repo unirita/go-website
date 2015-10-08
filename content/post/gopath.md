@@ -15,7 +15,7 @@ GOPATHを利用することで、外部ライブラリの導入やビルド作�
 
 GOPATH直下には、3つのディレクトリを配置します。
 
-<pre>
+<pre class="output">
 $GOPATH/
 ┣bin/
 ┣pkg/

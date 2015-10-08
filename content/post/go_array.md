@@ -65,8 +65,9 @@ func main() {
 
 実行結果は次の通り。
 
->1月 = January
-2月 = February
+<pre class="output">
+1月 = January
+2月 = February  
 3月 = March
 4月 = April
 5月 = May
@@ -77,6 +78,7 @@ func main() {
 10月 = October
 11月 = Nobember
 12月 = December
+</pre>
 
 配列にアクセスするfor文では、rangeを使用してアクセスすることも可能です。
 
@@ -96,12 +98,14 @@ month[i] = "Undecimber" // ランタイムエラー
 
 これを実行すると、次の様になります。
 
->panic: runtime error: index out of range
+<pre class="output">
+panic: runtime error: index out of range
 
->goroutine 1 [running]:
+goroutine 1 [running]:
 main.main()
-	/home/samples/main.go:23 +0x350
+    /home/samples/main.go:23 +0x350
 exit status 2
+</pre>
 
 ## 配列の初期化方法
 配列の宣言とデータ格納を同時に行うには、いろいろな書き方があります。以下にサンプルを記述します。

@@ -19,7 +19,7 @@ go install mainパッケージが格納されたディレクトリのパス
 
 例えば、以下の様なディレクトリ構成だったとします。
 
-<pre>
+<pre class="output">
 src/
 ┗testpkg
   ┗main

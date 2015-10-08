@@ -55,9 +55,9 @@ func main() {
 
 実行結果は、次の通り。
 
->[1 2 3 4 5]
-[2 3 4]
-[5]
+>[1 2 3 4 5]  
+[2 3 4]  
+[5]  
 [1 2 3 4]
 
 ## スライスを引数に渡す
@@ -108,13 +108,13 @@ func main() {
 
 	// 配列の一部をスライス
 	slice1 := num[1:4]
-	fmt.Println(slice1)
+	fmt.Println("slice1=", slice1)
 	fmt.Println("len=", len(slice1))
 	fmt.Println("cap=", cap(slice1))
 
 	// スライスの一部をスライス
 	slice2 := slice1[1:4] // 長さを超過した、キャパシティ最大値まで可能
-	fmt.Println(slice2)
+	fmt.Println("slice2=", slice2)
 	fmt.Println("len=", len(slice2))
 	fmt.Println("cap=", cap(slice2))
 
@@ -123,11 +123,11 @@ func main() {
 
 実行結果は、次の通り。
 
->slice1=[2 3 4]
-len= 3
-cap= 4
-slice2=[3 4 5]
-len= 3
+>slice1= [2 3 4]  
+len= 3  
+cap= 4  
+slice2= [3 4 5]  
+len= 3  
 cap= 3
 
 slice2では、slice1の長さを超えた参照先の配列へアクセスできます。

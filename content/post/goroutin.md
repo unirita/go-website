@@ -57,7 +57,8 @@ func serialno() {
 
 これを実行すると、次の結果が表示されます。（実行状況によっては、多少異なります）
 
->main start.
+<pre class="output">
+main start.
 普通に関数を呼び出す
 0
 1
@@ -68,6 +69,7 @@ func serialno() {
 0
 1
 main end.
+</pre>
 
 「ゴルーチン」として呼び出した場合は、シリアルナンバーの表示が中断されていることが分かります。
 

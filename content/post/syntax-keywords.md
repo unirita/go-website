@@ -10,7 +10,7 @@ categories = ["Go言語の基本"]
 
 以下に挙げる単語はキーワードと呼ばれ、コード内で特別な意味を持ちます。
 
-<pre>
+<pre class="output">
 break        default      func         interface    select
 case         defer        go           map          struct
 chan         else         goto         package      switch

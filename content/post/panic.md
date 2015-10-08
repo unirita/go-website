@@ -26,14 +26,16 @@ func main() {
 
 これを実行すると、次の様に出力されます。
 
->panic: Occured panic!
+<pre class="output">
+panic: Occured panic!
 
->goroutine 1 [running]:
+goroutine 1 [running]:
 main.func1()
 	/home/src/samples/main.go:4 +0x65
 main.main()
 	/home/src/samples/main.go:8 +0x14
 exit status 2
+</pre>
 
 ## panic実行前に指定したdefer関数
 「panic」を呼び出すと、その関数は中断されますが、呼び出し前にdeferで指定した関数は実行されます。
@@ -61,16 +63,18 @@ func main() {
 
 これを実行数と、次の様に表示されます。
 
->defer 2
+<pre class="output">
+defer 2
 defer 1
 panic: Occured panic!
 
->goroutine 1 [running]:
+goroutine 1 [running]:
 main.func1()
 	/Users/katsuji/Documents/workspace/gocuto/src/samples/main.go:9 +0x86
 main.main()
 	/Users/katsuji/Documents/workspace/gocuto/src/samples/main.go:16 +0x35
 exit status 2
+</pre>
 
 ## ランタイムパニック
 インデックスの超過など、Go言語のランタイムがパニックを起こすことがあります。これを「ランタイムパニック」と呼び、このときには「runtime.Errorインタフェース」が渡されます。
@@ -101,8 +105,10 @@ func main() {
 
 実行すると、次の結果が表示されます。
 
->panic: runtime error: index out of range
+<pre class="output">
+panic: runtime error: index out of range
 goroutine 1 [running]:
 main.main()
 	/home/src/samples/main.go:8 +0x63
 exit status 2
+</pre>

@@ -44,7 +44,9 @@ func main() {
 
 err.Error()の戻り値はstring型なので、以下の様なエラーメッセージが表示されます。
 
-> open test.txt: no such file or directory
+<pre class="output">
+open test.txt: no such file or directory
+</pre>
 
 # 自作した関数のエラー処理
 自分で関数を自作した場合も同様に、「error」型を使った戻り値をとることで、Go言語として一貫したエラー処理を行うことができます。

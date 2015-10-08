@@ -134,7 +134,7 @@ import文は、正確には以下の様な動作をします。
 
 つまり、import文に指定した文字列と、読み込まれるパッケージ名が一致しないケースがあります。
 
-<pre>
+<pre class="output">
 （GOPATH）/
 ┗src/
 　┣test/
@@ -210,7 +210,7 @@ func SomeFunc2() {
 
 1つのフォルダ直下に、互いに異なるパッケージが宣言された複数のコードを置くことはできません。つまり、以下のような構造はエラーになります。
 
-<pre>
+<pre class="output">
 （GOPATH）/
 ┗src/
 　┗test/
@@ -224,7 +224,7 @@ func SomeFunc2() {
 
 実は、同フォルダに複数パッケージを配置できる例外的なケースが一つだけあります。
 
-<pre>
+<pre class="output">
 （GOPATH）/
 ┗src/
 　┗somepkg/
