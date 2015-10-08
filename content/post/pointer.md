@@ -36,6 +36,7 @@ func main() {
 	fmt.Println("pointerの中身：", *pointer)
 }
 ```
+
 実行結果は次の通り。アドレスは環境によって異なります。
 
 > nのアドレス：0x8201e0320
@@ -96,6 +97,6 @@ type myStruct struct {
 	b int
 }
 var my *myStruct = new(myStruct)
-
 ```
+
 なお、「new」で割り当てたメモリは、変数宣言と同様に、型ごとのゼロ値で初期化されます。

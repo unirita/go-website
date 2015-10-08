@@ -23,7 +23,9 @@ func main() {
 	func1()
 }
 ```
+
 これを実行すると、次の様に出力されます。
+
 >panic: Occured panic!
 
 >goroutine 1 [running]:
@@ -58,6 +60,7 @@ func main() {
 ```
 
 これを実行数と、次の様に表示されます。
+
 >defer 2
 defer 1
 panic: Occured panic!
@@ -77,7 +80,7 @@ exit status 2
 package runtime
 type Error interface {
 	error
-	
+
 	RuntimeError()
 }
 ```
