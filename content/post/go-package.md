@@ -135,16 +135,16 @@ import文は、正確には以下の様な動作をします。
 つまり、import文に指定した文字列と、読み込まれるパッケージ名が一致しないケースがあります。
 
 <pre class="output">
-（GOPATH）/
+$GOPATH/
 ┗src/
-　┣test/
-　┃┣sub/
-　┃┃┗sub.go（パッケージ名：sub）
-　┃┣sub2/
-　┃┃┗sub2.go（パッケージ名：other2）
-　┃┗test.go（パッケージ名：test）
-　┗test2/
-　　┗test.go（パッケージ名：other）
+  ┣test/
+  ┃┣sub/
+  ┃┃┗sub.go（パッケージ名：sub）
+  ┃┣sub2/
+  ┃┃┗sub2.go（パッケージ名：other2）
+  ┃┗test.go（パッケージ名：test）
+  ┗test2/
+    ┗test.go（パッケージ名：other）
 </pre>
 
 例えば上記のようなファイル構成の場合、import文と参照時のパッケージ名は以下の様になります。
@@ -211,11 +211,11 @@ func SomeFunc2() {
 1つのフォルダ直下に、互いに異なるパッケージが宣言された複数のコードを置くことはできません。つまり、以下のような構造はエラーになります。
 
 <pre class="output">
-（GOPATH）/
+$GOPATH/
 ┗src/
-　┗test/
-　　┣test.go（パッケージ名：test）
-　　┗test2.go（パッケージ名：test2）
+  ┗test/
+    ┣test.go（パッケージ名：test）
+    ┗test2.go（パッケージ名：test2）
 </pre>
 
 逆に、パッケージが同じソースコードであれば同ディレクトリにいくつでも配置が可能です。
@@ -225,11 +225,11 @@ func SomeFunc2() {
 実は、同フォルダに複数パッケージを配置できる例外的なケースが一つだけあります。
 
 <pre class="output">
-（GOPATH）/
+$GOPATH/
 ┗src/
-　┗somepkg/
-　　┣some.go（パッケージ名：somepkg）
-　　┗some_test.go（パッケージ名：somepkg_test）
+  ┗somepkg/
+    ┣some.go（パッケージ名：somepkg）
+    ┗some_test.go（パッケージ名：somepkg_test）
 </pre>
 
 ファイル名の（拡張子を除いた）末尾が`_test`で終わるコードはテストコードとして扱われる（詳しくは別章で説明します）のですが、
