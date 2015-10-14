@@ -57,4 +57,4 @@ $ go tool cover -html=cover.out
 
 上記のコマンドを発行すると自動的に標準のブラウザが起動し、カバレッジ情報が表示されます。
 
-![ブラウザ上でのカバレッジ表示](/images/coverage_html.png)
+![ブラウザ上でのカバレッジ表示](/gostudy/images/coverage_html.png)
