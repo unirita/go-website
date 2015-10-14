@@ -613,3 +613,13 @@ Copyright (c) 2014 Daniel Eden
   padding: 0;
   text-align: center;
 }
+
+/* Index */
+.index h2 {
+  margin-left: 20px;
+}
+
+.index-list {
+  margin-left: 40px;
+  list-style-type: square;
+}
