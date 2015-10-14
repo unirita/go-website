@@ -12,7 +12,7 @@ categories = ["Goのテスト"]
 しかし、依存性の注入を行うことでスタブ程度であれば比較的簡単に実現ができます。
 例として、以下の製品コードとテストコードを見てみましょう。
 
-[GoCutoサーバント session.go（製品コード）](https://github.com/unirita/cuto/blob/master/src/cuto/servant/remote/session.go)
+[GoCutoサーバント session.go（製品コード）](https://github.com/unirita/cuto/blob/master/src/cuto/servant/remote/session.go)  
 [GoCutoサーバント session_test.go（製品コード）](https://github.com/unirita/cuto/blob/master/src/cuto/servant/remote/session_test.go)
 
 session.go内で定義されているSession構造体では、別のマシンとの通信処理を行っています。
