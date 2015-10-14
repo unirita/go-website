@@ -1,0 +1,75 @@
+{{ partial "head.html" . }}
+<div class="site-wrap">
+    {{ partial "header.html" . }}
+    {{ if isset .Site.Params "description" }}
+    <meta name="description" content="{{ .Site.Params.description }}">
+    {{ end }}
+    <div class="post p2 p-responsive wrap" role="main">
+        <div class="measure">
+            <div class="home">
+                <div class="index">
+                    <h1>目次</h1>
+                    <h2>序章</h2>
+                    <ul class="index-list">
+                        <li><a href="{{ .Site.BaseURL }}/post/first-try-on-playground">まずは触ってみよう</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/install">インストール</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/first-run">ビルド・実行する</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go-ide">IDEの紹介</a></li>
+                    </ul>
+                    <h2>第一章　Go言語の基本</h2>
+                    <ul class="index-list">
+                        <li><a href="{{ .Site.BaseURL }}/post/basic-syntax">基本的な文法</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/syntax-keywords">キーワード</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/syntax-type">基本的な型</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/type-declaration-and-conversion">型の宣言と変換</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/var-literal-and-const">変数・定数・リテラル</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go-operator">演算子</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/conditional-branch">条件分岐</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/loop-statement">繰り返し</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/pointer">ポインタ</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go-zero">ゼロ値</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go-label">ラベル</a></li>
+                    </ul>
+                    <h2>第二章　中級者向け</h2>
+                    <ul class="index-list">
+                        <li><a href="{{ .Site.BaseURL }}/post/go-package">パッケージ</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/gopath">GOPATHについて</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/command-go-install">go installコマンド</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/struct">構造体</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/function">関数・メソッド</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/defer">遅延実行</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/interface">インタフェース</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go_array">配列</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go_slice">スライス（前編）</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go_slice2">スライス（後編）</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go_map">マップ</a></li>
+                    </ul>
+                    <h2>第三章　エラーハンドリング</h2>
+                    <ul class="index-list">
+                        <li><a href="{{ .Site.BaseURL }}/post/error-defer">戻り値によるハンドリング</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/panic">パニック</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/recovery">リカバリ</a></li>
+                    </ul>
+                    <h2>第四章　並列処理</h2>
+                    <ul class="index-list">
+                        <li><a href="{{ .Site.BaseURL }}/post/goroutin">ゴルーチン</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go_chanel">ゴルーチン間の通信</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/go_select">select文</a></li>
+                    </ul>
+                    <h2>第五章　テスティング</h2>
+                    <ul class="index-list">
+                        <li><a href="{{ .Site.BaseURL }}/post/unittest">基本的なユニットテスト</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/coverage">カバレッジ測定</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/testing-techniques">テクニック集</a></li>
+                    </ul>
+                    <h2>第六章　通信</h2>
+                    <ul class="index-list">
+                        <li><a href="{{ .Site.BaseURL }}/post/socket">ソケット通信</a></li>
+                        <li><a href="{{ .Site.BaseURL }}/post/http">HTTP通信</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ partial "footer.html" . }}
