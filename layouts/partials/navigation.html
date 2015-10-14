@@ -1,0 +1,8 @@
+<a href="{{ .Site.BaseURL }}/">Top</a>
+<a href="{{ .Site.BaseURL }}/about/">About</a>
+{{ if isset .Site.Params "search_engine" }}
+<form class="navbar-search" action="{{ .Site.BaseURL }}/search/index.html"
+    onsubmit="return validateForm(this.elements['q'].value);">
+    <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input">
+{{ end }}
+</form>
