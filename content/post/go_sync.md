@@ -1,6 +1,6 @@
 +++
 date = "2015-10-09T10:31:47+09:00"
-draft = true
+draft = false
 title = "syncパッケージを利用した同期処理"
 author = "shanxia"
 categories = ["並列処理"]
