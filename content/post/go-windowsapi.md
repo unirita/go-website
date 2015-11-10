@@ -1,6 +1,6 @@
 +++
 date = "2015-11-10T11:07:06+09:00"
-draft = true
+draft = false
 title = "WindowsAPIを呼ぶ"
 author = "shanxia"
 categories = ["並列処理"]
