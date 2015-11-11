@@ -3,7 +3,7 @@ date = "2015-11-11T15:49:37+09:00"
 draft = false
 title = "ファイル入出力"
 author = "hondata"
-categories = ["標準ライブラリの活用"]
+categories = ["便利な標準ライブラリ"]
 +++
 
 # osパッケージ
