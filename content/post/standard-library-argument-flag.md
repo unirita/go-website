@@ -1,19 +1,19 @@
 +++
 date = "2015-11-12T13:47:01+09:00"
 draft = false
-title = "実行時引数の処理"
+title = "コマンドパラメータの処理"
 author = "kazami"
 categories = ["便利な標準ライブラリ"]
 +++
 
-# 実行時引数の処理方法
+# コマンドパラメータの処理方法
 
-Goで実行時引数を扱うには、osパッケージを利用する方法と、flagパッケージを利用する方法があります。
+Goでコマンドパラメータを扱うには、osパッケージを利用する方法と、flagパッケージを利用する方法があります。
 
 ## osパッケージを利用する方法
 
-osパッケージのos.Argsを扱うのが一番基礎的な方法です。  
-os.Argsはstring型のスライスで定義されており、実行時引数が代入されます。  
+osパッケージのos.Argsを扱う方法です。  
+os.Argsはstring型のスライスで定義されており、コマンドパラメータが代入されます。  
 
 ```go
 package main
@@ -31,7 +31,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("実行プロセス: %s\n", os.Args[0])
+	fmt.Printf("実行ファイル名: %s\n", os.Args[0])
 	fmt.Printf("引数1: %s\n", os.Args[1])
 	fmt.Printf("引数2: %s\n", os.Args[2])
 	fmt.Printf("引数3: %s\n", os.Args[3])
@@ -44,101 +44,155 @@ func main() {
 
 実行結果
 <pre class="output">
-[argument.exe arg1 arg2 arg3]
-実行プロセス: argument.exe
+[argument arg1 arg2 arg3]
+実行ファイル名: argument
 引数1: arg1
 引数2: arg2
 引数3: aeg3
 </pre>
 
-実行結果から分かる通り、os.Argsの最初には実行プロセス名が入ります。
+実行結果から分かる通り、os.Argsの最初には実行ファイル名が入ります。
 
 ## flagパッケージを利用する方法
-実行時引数にオプションを指定するなど、少し複雑な処理をしたい場合はflagパッケージを使用します。
+コマンドパラメータにオプションを指定するなど、少し複雑な処理をしたい場合はflagパッケージを使用します。
 
-flagパッケージの使用手順は、以下の通りになります。
+まず、以下のコードを見てみましょう。
 
-1. オプションの名前、型、初期値を定義する  
-2. flagパッケージのParse関数を用いて実行時引数を解析する  
-
-**1. オプションの名前、型、初期値などを定義する**  
-以下のように、オプションの情報を変数に格納します。
-
-<pre class="output">
-import "flag"
-var flagvar = flag.String("flagname", "default", "help message for flagname")
-</pre>
-
-ここでは、値にstring型の文字列が入るオプションを定義しています。
-
-* filename の部分にはオプション名を指定します。
-* default の部分にはオプションのデフォルト値を指定します。
-* help message for flagname の部分にはオプションの使用方法を記述します。
-
-また、あらかじめ定義した変数に格納することも可能です。
-<pre class="output">
-var flagvar string
-func init() {
-  flag.StringVar(&flagvar, "flagname", "default", "help message for flagname")
-}
-</pre>
-
-**2. flagパッケージのParse関数を用いて実行時引数を解析する**  
-定義したオプションは、flag.Parse関数で使用できるようになります。
-<pre class="output">
-flag.Parse()
-</pre>
-
-以下は実行例です。  
-
-コード  
 ```go
 package main
 
 import (
-	"fmt"
 	"flag"
+	"fmt"
+)
+
+var (
+	intOpt  = flag.Int("i", 1234, "help message for i option")
+	boolOpt = flag.Bool("b", false, "help message for b option")
+	strOpt  = flag.String("s", "default", "help message for s option")
 )
 
 func main() {
-	var f = flag.Int("f", 1234, "help message for f")
-	var b = flag.Bool("b", false, "help message for bool")
-	var s = flag.String("s", "default", "help message for long")
+
 	flag.Parse()
 
-	fmt.Println(*f)
-	fmt.Println(*b)
-	fmt.Println(*s)
+	fmt.Println(*intOpt)
+	fmt.Println(*boolOpt)
+	fmt.Println(*strOpt)
 }
-
 ```
 
-実行例1  
+実行
+
 <pre class="output">
-% ./flag -help
-</pre>
-helpオプションを指定すると、オプションのUsageが表示されます。  
-   
-結果1  
-<pre class="output">
-Usage of ./flag:
-  -f=1234: help message for f
-  -s="default": help message for long
-  -b=false: help message for str
+% ./argument -i 11 -b -s test
 </pre>
 
-実行例2  
-<pre class="output">
-% ./flag -f 11 -s message -b
-</pre>
 
-結果2  
+実行結果
+
 <pre class="output">
 11
 true
-message
+test
 </pre>
 
-なお、オプションの指定では-fの他に--fや、--f=10といった指定も可能です。  
+---
+
+では、コードの内容を解説します。
+
+<pre class="output">
+var (
+    intOpt  = flag.Int("i", 1234, "help message for i option")
+	boolOpt = flag.Bool("b", false, "help message for b option")
+	strOpt  = flag.String("s", "default", "help message for s option")
+)
+</pre>
+
+ここでは、オプションの定義を行っています。  
+オプションの定義では、オプションの型、オプション名、デフォルト値、ヘルプメッセージ(後述)を定義します。  
+  
+細かく見てみましょう。  
+<pre class="output">
+intOpt  = flag.Int("i", 1234, "help message for i option")
+</pre>
+
+* flag.Intは、Int型の値をとるオプションを定義するflagパッケージの関数です
+* i　はオプション名です
+* 1234はiオプションのデフォルト値です。オプションを指定しない場合は、デフォルト値がオプションの値に入ります。
+* help message(省略) は、オプションの説明を記述しています。記述したメッセージは、flagパッケージの機能であるhelpオプションを使用した際に扱われます。※後述の「helpオプション」を参照
+
+---
+
+<pre class="output">
+flag.Parse()
+</pre>
+
+flag.Parse関数を用いて、コマンドラインを解析し、定義したオプションにセットします。  
+
+---
+
+### flag.Bool関数について
+flag.Bool関数では、定義したオプションが、実行時に指定されているかどうかを判断し、booleanの値を格納します。  
+bオプションを指定した場合  
+
+<pre class="output">
+% ./argument -i 11 -b -s test
+</pre>
+
+実行結果
+
+<pre class="output">
+11
+true
+test
+</pre>
+
+bオプションを指定なかった場合(デフォルト値はfalse)
+
+<pre class="output">
+% ./argument -i 11 -s test
+</pre>
+
+実行結果
+
+<pre class="output">
+11
+false
+test
+</pre>
+
+---
+
+### helpオプション
+flagパッケージでは、実行時のオプションにhelpオプションを指定する事により、オプションの使用方法を表示する機能が標準で備わっています。
+
+helpオプションを指定して実行
+
+<pre class="output">
+% ./argument -help
+</pre>
+
+実行結果
+<pre class="output">
+Usage of argument:
+  -b    help message for b option
+  -i int
+        help message for i option (default 1234)
+  -s string
+        help message for s option (default "default")
+</pre>
+
+各オプションの説明には、オプションの定義の段階で定義したメッセージが表示されます。  
+
+---
+
+### オプションの指定方法
+これまでの実行例では、オプションの指定方法は **-[オプション名]**　としてきましたが、  
+以下のような指定方法も可能です。  
+-i 11  
+--i 11  (ハイフンを二回連続)
+-i=11  
+
 
 flagパッケージの詳細な使用方法については、[公式ドキュメント](https://golang.org/pkg/flag/#String)に記載されています。  
