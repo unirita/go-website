@@ -1,7 +1,7 @@
 +++
 date = "2015-11-13T13:23:57+09:00"
 draft = false
-title = "日時処理"
+title = "日時に関する処理"
 author = "hondata"
 catetories = ["便利な標準ライブラリ"]
 +++
