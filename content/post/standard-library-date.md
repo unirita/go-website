@@ -47,13 +47,13 @@ import "fmt"
 import "time"
 
 func main() {
-	t := time.Date(2015, 9, 13, 12, 35, 42, 0, time.Local)
+	t := time.Date(2015, 9, 13, 12, 35, 42, 123456789, time.Local)
 	fmt.Println(t)
 }
 ```
 
 <pre class="output">
-2015-09-13 12:35:42 +0900 JST
+2015-09-13 12:35:42.123456789 +0900 JST
 </pre>
 
 Date関数の引数は先頭から順に
