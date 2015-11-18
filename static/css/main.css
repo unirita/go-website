@@ -248,6 +248,7 @@ pre {
 
 pre.output {
     border: 1px solid gray;
+    overflow-x: scroll;
 }
 
 .highlight .p {
